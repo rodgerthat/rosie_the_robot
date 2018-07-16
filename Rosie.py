@@ -15,7 +15,9 @@ import pygame
 import RPi.GPIO as GPIO
 
 import ADXL345.Adafruit_I2C as Adafruit_I2C
-import ADXL345.Adafruit_ADXL345 as Adafruit_ADXL345
+#import ADXL345.Adafruit_ADXL345 as Adafruit_ADXL345
+#from ADXL345 import Adafruit_ADXL345
+import ADXL345
 
 from mutagen.mp3 import MP3
 
@@ -53,7 +55,8 @@ class Rosie:
     def boot(self):
 
         # set the accelerometer
-        self.accelerometer = Adafruit_ADXL345()
+        #TODO : left off here, no callable attribute error
+        self.accelerometer = ADXL345.Adafruit_ADXL345.Adafruit_ADXL345()
 
         # initialize the pygame.mixer
         # frequency = 22050, size = -16, channels = 2, buffersize = 4096
